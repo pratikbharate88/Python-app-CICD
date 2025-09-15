@@ -20,7 +20,7 @@ pipeline {
                 sshagent(credentials: ["${SSH_CRED}"]) {
                     sh '''
                         ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${SERVER_IP} "mkdir -p ${APP_DIR}"
-                        scp -r Dockerfile README.md app.py requirements.txt test ${REMOTE_USER}@${SERVER_IP}:${APP_DIR}/
+                        scp -r Dockerfile app.py requirements.txt test ${REMOTE_USER}@${SERVER_IP}:${APP_DIR}/
                     '''
                 }
             }
