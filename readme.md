@@ -28,7 +28,7 @@ The goal is to streamline the development workflow by integrating automated stag
 
 - Serve as a DevOps learning example for small to mid-scale web apps
 
-## Step → 1 : Sign in into Amazon Web Services Console
+## Step → 1 : Configure AWS with `Root User` Credentials
 
 login to the Amazon Web Services Console using your credentials.
 
@@ -101,6 +101,19 @@ sudo apt-get install jenkins
 ```sh
 sudo systemctl Start Jenkins
 sudo systemctl enable Jenkins
+```
+
+## Project Directory Structure
+
+```sh
+pythonapp/
+├── Dockerfile
+├── app.log
+├── app.py
+├── requirements.txt
+├── test/
+│   └── test.py
+└── venv/  (virtual environment)
 ```
 
 ## Step → 5 : Copy Private Key on Jenkins Server
@@ -220,6 +233,3 @@ If tests pass and the package is successful, your deployment step should execute
 ## Summary
 
 Built an automated pipeline using Jenkins to build, test, and deploy a Python application. The pipeline pulls code from GitHub, installs dependencies, checks code quality, runs tests, and then deploys the app — all automatically. This helped speed up the development process, reduced errors, and made deployments easier and more reliable.
-
-
-I
